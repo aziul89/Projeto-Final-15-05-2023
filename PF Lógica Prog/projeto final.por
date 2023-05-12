@@ -72,6 +72,9 @@ programa
         			caso 0:
           				escreva("**Programa encerrado**")
           				pare
+					
+				caso contrario:
+        			escreva("Opção inválida. Por favor, selecione um número de 1 a 4.\n")
 
         }
       }
