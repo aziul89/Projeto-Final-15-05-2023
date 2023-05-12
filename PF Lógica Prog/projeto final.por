@@ -1,97 +1,79 @@
 programa
-{	
-	//PROJETO FINAL
-	//Alunas: Ana Beatriz Melo, Maria Julia Alexandre e Maria Luiza Farias
-
+{
+	//Lógica de Programação 2023.1 - PROJETO FINAL
+	//ALUNAS: Ana Beatriz Melo, Maria Julia Alexandre e Maria Luiza Farias
+	
 	inclua biblioteca Matematica --> mat
 	funcao real volCubo(real lado) {
-		real volume
-		volume = lado * lado * lado
-		retorne volume
-}
+		retorne lado * lado * lado
+	}
 
 	funcao real volParalelepipedo(real comprimento, real largura, real altura) {
-		real volume
-		volume = comprimento * altura * altura
-		retorne volume
-}
+		retorne comprimento * largura * altura
+	}
 
 	funcao real volEsfera(real raio) {
-		real volume
-		volume = (4.0/3.0) * 3.1416 * raio * raio * raio
-		retorne volume	
-}
+		retorne (4.0/3.0) * 3.14 * raio * raio * raio
+	}
 
 	funcao real volCilindro(real raio, real altura) {
-	real volume
-	volume = 3.1416 * raio * raio * altura
-	retorne volume
-}
+		retorne 3.14 * raio * raio * altura
+	}
 
 	funcao inicio() {
 		inteiro entrada
 		real lado, comprimento, largura, altura, raio, volumeCubo, volumeParalelepipedo, volumeEsfera, volumeCilindro
 
-		escreva("Qual é o sólido geométrico que deseja calcular o volume?\n")
-		escreva("1 - Cubo\n")
-		escreva("2 - Paralelepípedo\n")
-		escreva("3 - Esfera\n")
-		escreva("4 - Cilindro\n")
-		leia(entrada)
+		enquanto(entrada != 0) {
 
-		escolha(entrada){
-			caso 1:
-				escreva("Quanto mede o lado do cubo?\n")
-				leia(lado)
-				volumeCubo = volCubo(lado)
-				escreva("O volume do cubo é: ", volumeCubo)
-				pare
+			escreva("OBS.: Para calcular o volume, todas as medidas devem estar na mesma unidade.\n> Selecione o sólido geométrico:\n")
+			escreva("1 - Cubo\n")
+			escreva("2 - Paralelepípedo\n")
+			escreva("3 - Esfera\n")
+			escreva("4 - Cilindro\n")
+      			escreva("0 - Encerrar\n")
+			leia(entrada)
 
-			caso 2:
-				escreva("Qual o comprimento?\n")
-				leia(comprimento)
-				escreva("Qual a largura?\n")
-				leia(largura)
-				escreva("Qual a altura?\n")
-				leia(altura)
-				volumeParalelepipedo = volParalelepipedo(comprimento, largura, altura)
-				escreva("O volume do paralelepípedo é: ", volumeParalelepipedo)
-				pare
+			escolha(entrada){
+				caso 1:
+					escreva("Certo!\nQual a medida do lado do cubo?\n")
+					leia(lado)
+					volumeCubo = volCubo(lado)
+					escreva("O volume do cubo é: ", volumeCubo, "\n")
+					pare
 
-			caso 3:
-				escreva("Qual o raio da esfera?\n")
-				leia(raio)
-				volumeEsfera = volEsfera(raio)
-				escreva("O volume da esfera é: ", volumeEsfera)
-				pare
+				caso 2:
+					escreva("Certo!\nQual a medida do comprimento?\n")
+					leia(comprimento)
+					escreva("Quanto mede a largura?\n")
+					leia(largura)
+					escreva("Quanto mede a altura?\n")
+					leia(altura)
+					volumeParalelepipedo = volParalelepipedo(comprimento, largura, altura)
+					escreva("O volume do paralelepípedo é: ", volumeParalelepipedo, "\n")
+					pare
 
-			caso 4:
-				escreva("Qual o raio do cilindro?\n")
-				leia(raio)
-				escreva("Qual a altura do cilindro?\n")
-				leia(altura)
-				volumeCilindro = volCilindro(raio, altura)
-				escreva("O volume do cilindro é: ", volumeCilindro)
-				pare
+				caso 3:
+					escreva("Certo!\nQual a medida do raio da esfera?\n")
+					leia(raio)
+					volumeEsfera = volEsfera(raio)
+					escreva("O volume da esfera é: ", volumeEsfera, "\n")
+					pare
 
-			caso contrario:
-				escreva("Opção inválida. Por favor, digite um número de 1 a 4.")
+				caso 4:
+					escreva("Certo!\nQual a medida do raio do cilindro?\n")
+					leia(raio)
+					escreva("Qual a altura do cilindro?\n")
+					leia(altura)
+					volumeCilindro = volCilindro(raio, altura)
+          				escreva("O volume do cilindro é:", volumeCilindro, "\n")
+          				pare
 
-		}
-		
-	
-	}		
-	
-}
+        			caso 0:
+          				escreva("**Programa encerrado**")
+          				pare
 
-/* $$$ Portugol Studio $$$ 
- * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
- * 
- * @POSICAO-CURSOR = 1983; 
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
- * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
- */
+        }
+      }
+    }
+  }
