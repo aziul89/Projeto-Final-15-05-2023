@@ -21,7 +21,7 @@ programa
 	}
 
 	funcao inicio() {
-		inteiro entrada
+		inteiro entrada = 10
 		real lado, comprimento, largura, altura, raio, volumeCubo, volumeParalelepipedo, volumeEsfera, volumeCilindro
 
 		enquanto(entrada != 0) {
@@ -31,7 +31,7 @@ programa
 			escreva("2 - Paralelepípedo\n")
 			escreva("3 - Esfera\n")
 			escreva("4 - Cilindro\n")
-      			escreva("0 - Encerrar\n")
+      			escreva("0 - Sair(x)\n")
 			leia(entrada)
 
 			escolha(entrada){
